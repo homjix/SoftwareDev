@@ -42,7 +42,7 @@ public class Ex_13_1901015160 extends JFrame {
         boolean isMyMissileActive;
 
         /* 敵機に関する変数 */
-        int numOfEnemy = 12;
+        int numOfEnemy = 13;
         int numOfAlive = numOfEnemy;
         int enemyWidth, enemyHeight;
         int[] enemyX = new int[numOfEnemy];
@@ -62,6 +62,11 @@ public class Ex_13_1901015160 extends JFrame {
             addMouseMotionListener(this);
             timer = new Timer(50, this);
             timer.start();
+            label = new JLabel("click and shoot!!");
+            label.setFont(new Font("Futura", Font.ITALIC, 30));
+            label.setForeground(new Color(33, 43, 37));
+            label.setBounds(30, 30, 20, 25);
+            add(label);
 
             // 画像の取り込み
             imgMe = getImg("heart01.jpg");
@@ -158,14 +163,19 @@ public class Ex_13_1901015160 extends JFrame {
 
         /* 敵機の初期化 */
         public void initEnemyPlane() {
-            for (int i=0; i<7; i++) {
+            for (int i=0; i<6; i++) {
                 enemyX[i] = 70*i;
-                enemyY[i] = 50;
+                enemyY[i] = 100;
             }
 
-            for (int i=7; i<numOfEnemy; i++) {
-                enemyX[i] = 70*(i-6);
-                enemyY[i] = 100;
+            for (int i=6; i<10; i++) {
+                enemyX[i] = 70*(i-5);
+                enemyY[i] = 150;
+            }
+
+            for (int i=10; i<numOfEnemy; i++) {
+                enemyX[i] = 70*(i-9);
+                enemyY[i] = 200;
             }
 
             for (int i=0; i<numOfEnemy; i++) {
