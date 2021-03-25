@@ -1,2 +1,5 @@
-testcommit
-testcommit2
+i=0
+y=1
+if(i=0||y=1){
+}
+
